@@ -4,12 +4,18 @@ import android.support.v7.app.ActionBarActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import butterknife.bindView
+import android.widget.TextView
+import android.app.Activity
 
-public class MainActivity : ActionBarActivity() {
+public class MainActivity : Activity() {
+
+    val hello: TextView by bindView(R.id.hello_text_view)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        hello.setText(R.string.hello_world)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
